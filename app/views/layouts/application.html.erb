@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--Main page rendered on the whole site-->
 <html>
   <head>
     <title>Lamadaapp</title>
@@ -8,7 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body><!--Creating routes to pages and navigation-->
+  <%= link_to "Home", root_path %>
+  <%= link_to "Manifesto", welcome_manifesto_path %> <!--Adding this gives us relative routes-->
+  <%= link_to "Contact", welcome_contact_path %>
+  <%= link_to "Products", welcome_products_path %>
+  <%= link_to "FAQs", welcome_faqs_path %>
+  <%= link_to "Team", welcome_team_path %>
+  <%= link_to "invoices", invoices_path %>
+  <%= link_to "Login", root_path %>
+    <%= yield %><!--Where the views get displayed-->
   </body>
 </html>

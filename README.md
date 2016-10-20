@@ -1,24 +1,20 @@
-# README
+Lamada Limited
+===================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Company web application
+========================
 
-Things you may want to cover:
+### Website built for Lamada Ltd. A multinational company focused on development in Africa
 
-* Ruby version
+You can checkout more of my work and contact me at https://charles90210.github.io
 
-* System dependencies
+### Project Objectives
++ To create fully integrated, functional web application for the client
++ Deliver website as first point of contact for customers to connect with client
++ integrated platform for cleint Services
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Reasons to work with us for your next web application
+* We **always** honour our word and keep our promises
+* We work with you to deliver work that is close to your heart
++ We just know this stuff and we love helping you create your masterpiece
