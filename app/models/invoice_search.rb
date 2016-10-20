@@ -9,7 +9,7 @@ class InvoiceSearch
 
   #Protects site from people trying to inject malicious code into the site as a filter is used here by activerecord and postgresql
   def scope
-    Invoice.where('date BETWEEN ? AND ?', @date_from, @date_to)
+    Invoice.where('date BETWEEN ? AND ?', @date_from, @date_to) #sets scope for search
   end
   
   private
