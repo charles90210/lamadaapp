@@ -7,16 +7,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body><!--Creating routes to pages and navigation-->
-  <%= link_to "Home", root_path %>
-  <%= link_to "Manifesto", welcome_manifesto_path %> <!--Adding this gives us relative routes-->
-  <%= link_to "Contact", welcome_contact_path %>
-  <%= link_to "Products", welcome_products_path %>
-  <%= link_to "FAQs", welcome_faqs_path %>
-  <%= link_to "Team", welcome_team_path %>
-  <%= link_to "invoices", invoices_path %>
-  <%= link_to "Login", root_path %>
+  <div class="container">
+    <ul class="nav nav-tabs"><!--Adding this gives us relative routes-->
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Manifesto", welcome_manifesto_path %></li> 
+      <li><%= link_to "Contact", welcome_contact_path %></li>
+      <li><%= link_to "Products", welcome_products_path %></li>
+      <li><%= link_to "FAQs", welcome_faqs_path %></li>
+      <li><%= link_to "Team", welcome_team_path %></li>
+      <li><%= link_to "invoices", invoices_path %></li>
+      <li><%= link_to "Login", root_path %></li>
+    </ul>
     <%= yield %><!--Where the views get displayed-->
+  </div>
+
+
+
+
   </body>
 </html>
