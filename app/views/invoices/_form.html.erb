@@ -1,42 +1,64 @@
-<%= form_for(invoice) do |f| %>
-  <% if invoice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+<div class="row">
+  <%= form_for @invoice, html: { class: 'form-horizontal' } do |f| %>
+    <% if invoice.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
 
-      <ul>
-      <% invoice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% invoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="control-group">
+      <%= f.label :date, class: 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :date %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-  </div>
+    <div class="control-group">
+      <%= f.label :code, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :code %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :code %>
-    <%= f.text_field :code %>
-  </div>
+    <div class="control-group">
+      <%= f.label :vendor, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :vendor %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :vendor %>
-    <%= f.text_field :vendor %>
-  </div>
+    <div class="control-group">
+      <%= f.label :tax, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :tax %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :tax %>
-    <%= f.text_field :tax %>
-  </div>
-
-  <div class="field">
-    <%= f.label :salesperson %>
-    <%= f.text_field :salesperson %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :salesperson, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :salesperson %>
+      </div>
+    </div>
+    <br/>
+  <!--Adding options to update invoice status-->
+    <div class="control-group">
+      <%= f.label "status", class: 'control-label' %>
+      <div class="controls">
+        <%= f.select(:status_type, options_for_select([['PAID', 'PAID'], ['UNPAID', 'UNPAID']]), { include_blank: true }) %>
+      </div>
+    </div>
+    <br/>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit  'Submit', class: 'btn btn-info'%>
+      </div>
+    </div>
+</div>
 <% end %>
