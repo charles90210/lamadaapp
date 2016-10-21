@@ -5,6 +5,11 @@ class VendorsController < ApplicationController
   # GET /vendors.json
   def index
     @vendors = Vendor.all
+  #Adding a method so we can download data from our site in csv format
+    respond_to do |format|
+      format.html
+      format.csv { render text: @vendors.to_csv}
+    end
   end
 
   # GET /vendors/1

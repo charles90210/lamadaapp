@@ -36,7 +36,12 @@
 <%= form_tag import_vendors_path, multipart: true do %>
   <%= file_field_tag :file %>
   <br/>
-  <%= submit_tag "Upload Vendors" %>
+  <%= submit_tag "Upload Vendors", class: 'btn btn-info'%>
 <% end %>
   <br/>
+<h2>Download Data</h2>
+<%= link_to "Reports", vendors_path(format: "csv"), class: 'btn btn-info' %>
+
+<p><br/>
 <%= link_to 'New Vendor', new_vendor_path %>
+</p>
