@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vendors</h1>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Contact person</th>
+          <th>Payment</th>
+          <th>Status</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @vendors.each do |vendor| %>
+          <tr>
+            <td><%= vendor.name %></td>
+            <td><%= vendor.contact_person %></td>
+            <td><%= vendor.payment %></td>
+            <td><%= vendor.status %></td>
+            <td><%= link_to 'Show', vendor %></td>
+            <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+            <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<!--Adding a CSV Uploader to help us upload data from csv files-->
+<h2>Import Vendors</h2>
+<%= form_tag import_vendors_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <br/>
+  <%= submit_tag "Upload Vendors", class: 'btn btn-info'%>
+<% end %>
+  <br/>
+<h2>Download Data</h2>
+<%= link_to "Reports", vendors_path(format: "csv"), class: 'btn btn-info' %>
+
+<p><br/>
+<%= link_to 'New Vendor', new_vendor_path %>
+</p>
