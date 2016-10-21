@@ -28,9 +28,25 @@
         <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
     </ul>
-    <!--devise notice and alerts-->
-    <P class="notice"><%= notice %></p>  
-    <p class="alert"><%= alert %></p>
+    <!--devise notice and alerts using bootstrap-->
+    <%if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
+      </div>
+
+    <% elsif flash[:alert] %>
+      <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+      </div>
+    <% end %>
+
 
     <%= yield %><!--Where the views get displayed-->
   </div>
